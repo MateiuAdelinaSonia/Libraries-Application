@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.io.File;
@@ -47,6 +48,19 @@ public class Controller extends ParentCode.Controller {
         Scene scene = new Scene(home);
         ControllerBookDetails control = loader.getController();
         control.getDetails();
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void actiuneOferta(MouseEvent event) throws IOException {
+        URL url = new File("src/main/resources/Client/Special.fxml").toURI().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url);
+        Parent home = loader.load();
+        Scene scene = new Scene(home);
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);

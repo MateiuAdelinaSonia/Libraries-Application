@@ -9,6 +9,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controllers.ControllerClient">
    <children>
+      <ImageView fitHeight="743.0" fitWidth="640.0" layoutY="59.0">
+         <image>
+            <Image url="@BibliotecaFaina.jpg" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
       <Pane prefHeight="60.0" prefWidth="1401.0" style="-fx-background-color: #655;">
          <children>
             <Label layoutX="20.0" prefHeight="47.0" prefWidth="162.0" rotate="-5.0" text="LibraryApp" textFill="WHITE">
@@ -44,14 +52,6 @@
             </ImageView>
          </children>
       </Pane>
-      <ImageView fitHeight="743.0" fitWidth="640.0" layoutY="59.0">
-         <image>
-            <Image url="@BibliotecaFaina.jpg" />
-         </image>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </ImageView>
       <TableView fx:id="table" layoutX="736.0" layoutY="147.0" prefHeight="600.0" prefWidth="556.0" style="-fx-background-color: #ffff; -fx-border-color: #655;" stylesheets="@ClientTable.css" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="736.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="147.0">
          <columns>
             <TableColumn fx:id="image" prefWidth="148.0" style="-fx-alignment: CENTER;" />
@@ -66,5 +66,10 @@
             <Font name="Freestyle Script" size="53.0" />
          </font>
       </Label>
+      <ImageView fx:id="oferta" fitHeight="150.0" fitWidth="200.0" layoutX="1192.0" layoutY="66.0" onMouseClicked="#actiuneOferta" pickOnBounds="true" preserveRatio="true" rotate="15.5">
+         <image>
+            <Image url="@Special.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

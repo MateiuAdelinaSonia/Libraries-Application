@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager.Controllers.ControllerPdf">
+   <children>
+      <Pane layoutX="-3.0" layoutY="43.0" prefHeight="60.0" prefWidth="410.0" style="-fx-background-color: #655;">
+         <children>
+            <Label layoutX="49.0" layoutY="-6.0" prefHeight="68.0" prefWidth="315.0" text="!!!Special offer!!!" textFill="WHITE">
+               <font>
+                  <Font name="Segoe Print" size="38.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="close" layoutX="418.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleClose" stylesheets="@../Login/ButtonTheme.css" text="X" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="close1" layoutX="327.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleCloseOK" prefHeight="37.0" prefWidth="80.0" stylesheets="@../Login/ButtonTheme.css" text="OK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="125.0" fitWidth="119.0" layoutX="166.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@book.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="51.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    For any 3 books borrowed from a Library, you get one book for free!" wrappingWidth="276.0">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

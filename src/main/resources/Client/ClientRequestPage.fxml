@@ -67,5 +67,10 @@
             </Button>
          </children>
       </Pane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1193.0" layoutY="71.0" onMouseClicked="#actiuneOferta" pickOnBounds="true" preserveRatio="true" rotate="14.0">
+         <image>
+            <Image url="@Special.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

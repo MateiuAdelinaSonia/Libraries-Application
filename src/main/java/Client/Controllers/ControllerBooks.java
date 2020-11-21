@@ -112,7 +112,7 @@ public class ControllerBooks extends Controller implements Initializable {
                 bookPDF.setPrefSize(150, 30);
                 bookPDF.setOnAction(e -> {
                     try {
-                        URL url = new File("src/main/resources/Client/PdfError.fxml").toURI().toURL();
+                        URL url = getClass().getClassLoader().getResource("Client/PdfError.fxml");
                         dp.DecodePdf(b, url);
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -128,7 +128,7 @@ public class ControllerBooks extends Controller implements Initializable {
                     b.setNoViews(b.getNoViews() + 1);
                     bookSave = b;
                     AddJSON.persistBooks();
-                    URL url = new File("src/main/resources/Client/BookDetails.fxml").toURI().toURL();
+                    URL url = getClass().getClassLoader().getResource("Client/BookDetails.fxml");
                     super.handleAction(url);
                 } catch (IOException ex) {
                     ex.printStackTrace();

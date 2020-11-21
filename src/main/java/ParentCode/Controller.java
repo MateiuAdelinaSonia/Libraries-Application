@@ -22,7 +22,7 @@ public class Controller {
     @FXML
     protected void handleClose(Button close) throws IOException {
         this.handleCloseSimple(close);
-        URL url = new File("src/main/resources/Login/Login.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Login/Login.fxml");
         Parent home = FXMLLoader.load(url);
         Scene scene = new Scene(home);
         Stage stage1 = new Stage();

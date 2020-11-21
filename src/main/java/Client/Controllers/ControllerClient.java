@@ -83,7 +83,7 @@ public class ControllerClient extends Controller implements Initializable {
                     try {
                         librarySave = u.getUsername();
                         libraryNameSave = u.getLibraryName();
-                        URL url = new File("src/main/resources/Client/BooksPage.fxml").toURI().toURL();
+                        URL url = getClass().getClassLoader().getResource("Client/BooksPage.fxml");
                         super.handle(e, url);
                     } catch (IOException ex) {
                         ex.printStackTrace();

@@ -30,21 +30,21 @@ public class Controller extends ParentCode.Controller {
     @FXML
     public void BooksPage(javafx.event.ActionEvent event) throws IOException {
         AddJSON.loadBooksFromFile();
-        URL url = new File("src/main/resources/Manager/ManagerPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Manager/ManagerPage.fxml");
         this.handle(event, url);
     }
 
     @FXML
     public void handleRequest(javafx.event.ActionEvent event) throws IOException {
         AddRequest.loadRequestsFromFile();
-        URL url = new File("src/main/resources/Manager/RequestPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Manager/RequestPage.fxml");
         this.handle(event, url);
     }
 
     @FXML
     public void handleViews(ActionEvent event) throws IOException {
         AddJSON.loadBooksFromFile();
-        URL url = new File("src/main/resources/Manager/ViewsPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Manager/ViewsPage.fxml");
         this.handle(event, url);
     }
 }

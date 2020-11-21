@@ -19,19 +19,19 @@ public class CreateAccountController extends Controller {
 
     @FXML
     public void handleBack(javafx.event.ActionEvent event) throws IOException {
-            URL url = new File("src/main/resources/Login/Login.fxml").toURI().toURL();
-            super.handle(event, url);
+         URL url = getClass().getClassLoader().getResource("Login/Login.fxml");
+         super.handle(event, url);
     }
 
     @FXML
     public void AccountClient(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Register/Client Registration Page.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Register/Client Registration Page.fxml");
         super.handle(event, url);
     }
 
     @FXML
     public void AccountManager(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Register/Manager Registration Page.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Register/Manager Registration Page.fxml");
         super.handle(event, url);
     }
 

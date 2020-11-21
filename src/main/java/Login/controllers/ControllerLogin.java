@@ -53,7 +53,7 @@ public class ControllerLogin extends Controller {
 
     @FXML
     public void handleCreateAccount(javafx.event.ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Register/Create Account Page.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Register/Create Account Page.fxml");
         Parent home = FXMLLoader.load(url);
         Scene scene = new Scene(home);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -78,10 +78,10 @@ public class ControllerLogin extends Controller {
                 if(u.getUsername().equals(saveUser)) {
                     if (u.getRole().equals("Manager")) {
                         userSaveManager = u;
-                        url = new File("src/main/resources/Manager/ManagerPage.fxml").toURI().toURL();
+                        url = getClass().getClassLoader().getResource("Manager/ManagerPage.fxml");
                     } else {
                         userSave = u;
-                        url = new File("src/main/resources/Client/ClientPage.fxml").toURI().toURL();
+                        url = getClass().getClassLoader().getResource("Client/ClientPage.fxml");
                     }
                 }
             Parent home = FXMLLoader.load(url);

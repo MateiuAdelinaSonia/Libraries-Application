@@ -81,7 +81,7 @@ public class ControllerRequest extends Controller implements Initializable {
                     accept_button.setOnAction(e -> {
                         try {
                             id_request = Client.Services.AddRequest.requests.indexOf(r);
-                            URL url = new File("src/main/resources/Manager/Accept.fxml").toURI().toURL();
+                            URL url = getClass().getClassLoader().getResource("Manager/Accept.fxml");
                             this.commonCode(url);
                         } catch (IOException ex) {
                             ex.printStackTrace();
@@ -94,7 +94,7 @@ public class ControllerRequest extends Controller implements Initializable {
                     decline_button.setOnAction(e -> {
                         try {
                             id_request = Client.Services.AddRequest.requests.indexOf(r);
-                            URL url = new File("src/main/resources/Manager/Decline.fxml").toURI().toURL();
+                            URL url = getClass().getClassLoader().getResource("Manager/Decline.fxml");
                             this.commonCode(url);
                         } catch (IOException ex) {
                             ex.printStackTrace();

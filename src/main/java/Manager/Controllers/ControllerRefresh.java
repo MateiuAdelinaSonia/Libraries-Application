@@ -17,8 +17,8 @@ public class ControllerRefresh extends Controller {
 
     public static Stage save1;
 
-    public static void refreshPage(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Manager/ManagerPage.fxml").toURI().toURL();
+    public void refreshPage(ActionEvent event) throws IOException {
+        URL url = getClass().getClassLoader().getResource("Manager/ManagerPage.fxml");
         Parent home = FXMLLoader.load(url);
         Scene scene = new Scene(home);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -29,8 +29,8 @@ public class ControllerRefresh extends Controller {
         save = save1;
     }
 
-    public static void refreshRequest(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Manager/RequestPage.fxml").toURI().toURL();
+    public void refreshRequest(ActionEvent event) throws IOException {
+        URL url = getClass().getClassLoader().getResource("Manager/RequestPage.fxml");
         Parent home = FXMLLoader.load(url);
         Scene scene = new Scene(home);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

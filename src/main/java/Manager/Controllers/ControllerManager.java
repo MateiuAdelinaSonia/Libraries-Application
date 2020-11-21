@@ -86,7 +86,7 @@ public class ControllerManager extends Controller implements Initializable {
                 edit.setPrefSize(140, 30);
                 edit.setOnAction(e -> {
                     try {
-                        URL url = new File("src/main/resources/Manager/EditBookPage.fxml").toURI().toURL();
+                        URL url = getClass().getClassLoader().getResource("Manager/EditBookPage.fxml");
                         FXMLLoader loader = new FXMLLoader();
                         loader.setLocation(url);
                         Parent home = loader.load();
@@ -126,7 +126,7 @@ public class ControllerManager extends Controller implements Initializable {
                     bookPDF.setPrefSize(140, 30);
                     bookPDF.setOnAction(e -> {
                         try {
-                            URL url = new File("src/main/resources/Manager/PdfError.fxml").toURI().toURL();
+                            URL url = getClass().getClassLoader().getResource("Manager/PdfError.fxml");
                             dp.DecodePdf(b, url);
                         } catch (IOException ex) {
                             ex.printStackTrace();
@@ -149,8 +149,7 @@ public class ControllerManager extends Controller implements Initializable {
 
     @FXML
     public void handleAddBook(javafx.event.ActionEvent event) throws IOException {
-
-        URL url = new File("src/main/resources/Manager/AddBookPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Manager/AddBookPage.fxml");
         Parent home = FXMLLoader.load(url);
         Scene scene = new Scene(home);
         Stage stage = new Stage();

@@ -25,19 +25,19 @@ public class Controller extends ParentCode.Controller {
 
     @FXML
     public void LibrariesPage(javafx.event.ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Client/ClientPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Client/ClientPage.fxml");
         this.handle(event, url);
     }
 
     @FXML
     public void RequestPage(javafx.event.ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Client/ClientRequestPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Client/ClientRequestPage.fxml");
         this.handle(event, url);
     }
 
     @FXML
     public void handleBooks(javafx.event.ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/Client/AllBooksPage.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Client/AllBooksPage.fxml");
         this.handle(event, url);
     }
 
@@ -56,7 +56,7 @@ public class Controller extends ParentCode.Controller {
 
     @FXML
     public void actiuneOferta(MouseEvent event) throws IOException {
-        URL url = new File("src/main/resources/Client/Special.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Client/Special.fxml");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         Parent home = loader.load();

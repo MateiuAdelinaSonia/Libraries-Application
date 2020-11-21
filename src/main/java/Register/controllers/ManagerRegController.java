@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -44,7 +43,7 @@ public class ManagerRegController extends Controller {
     @FXML
     public void handleBack(javafx.event.ActionEvent event) throws IOException {
 
-        URL url = new File("src/main/resources/Register/Create Account Page.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Register/Create Account Page.fxml");
         super.handle(event, url);
     }
 
@@ -53,7 +52,7 @@ public class ManagerRegController extends Controller {
 
         try {
             UserService.addUserManager(libraryName.getText(), address.getText(), email.getText(), phoneNumber.getText(), username.getText(), password.getText());
-            URL url = new File("src/main/resources/Login/Login.fxml").toURI().toURL();
+            URL url = getClass().getClassLoader().getResource("Login/Login.fxml");
             super.handle(event, url);
             UserService.loadUsersFromFile();
         } catch (AlreadyExistsException e) {

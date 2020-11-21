@@ -45,8 +45,7 @@ public class ClientRegController extends Controller {
 
     @FXML
     public void handleBack(javafx.event.ActionEvent event) throws IOException {
-
-        URL url = new File("src/main/resources/Register/Create Account Page.fxml").toURI().toURL();
+        URL url = getClass().getClassLoader().getResource("Register/Create Account Page.fxml");
         super.handle(event, url);
     }
 
@@ -55,7 +54,7 @@ public class ClientRegController extends Controller {
 
         try {
             UserService.addUserClient(name.getText(), surname.getText(), address.getText(), email.getText(), phoneNumber.getText(), username.getText(), password.getText());
-            URL url = new File("src/main/resources/Login/Login.fxml").toURI().toURL();
+            URL url = getClass().getClassLoader().getResource("Login/Login.fxml");
             super.handle(event, url);
             UserService.loadUsersFromFile();
         } catch (AlreadyExistsException e) {
